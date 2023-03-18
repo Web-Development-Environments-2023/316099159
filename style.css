@@ -98,7 +98,7 @@ p{
   }
 
   .photo {
-	width: auto;
+	width: 100px;
 	height: 100px;
 	margin: 0px 5px 0px 5px;
   }
