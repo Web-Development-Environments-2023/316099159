@@ -46,6 +46,10 @@
 	padding-top: 150px; 
   }
 
+#playlist .youtube {
+	padding-left: 440px !important; 
+  }
+
 .section {
 	border-bottom: 3px solid #ccccccaa; /* add a 1px solid gray border to the bottom of each section */
 	padding-bottom: 20px; /* add some padding to the bottom of each section for spacing */
