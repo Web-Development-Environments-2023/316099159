@@ -83,6 +83,14 @@ p{
 	height: 50px;
 	margin: 50px 25px 0px 20px;
 }
+
+.qrcode {
+	width: 200px;
+	height: 200px;
+	margin: 10px 25px 0px 20px;
+	padding-left: 100px;
+}
+
 .gallery {
 	position: relative;
 	max-width: 800px;
@@ -125,7 +133,7 @@ p{
   }
   
   .full-image img.active {
-	max-width: 80%;
+	max-width: 100%;
 	border: 10px solid white;
   }
   
