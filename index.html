@@ -2,10 +2,12 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
 <body>
 <div id="menu">
 <ul>
+  <li><img src="icon.ico" alt="Menu icon" class="picture"></li>
   <li><a href="#about">About Me</a></li>
   <li><a href="#photos">My Photos</a></li>
   <li><a href="#playlist">My Playlist</a></li>
@@ -17,167 +19,66 @@
 </div>
 		  
 <section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
+<h1>about me</h1>
+<p>
+  <strong>I am Hetzi, and I would like to introduce myself to you.</strong> </br>
+  It would be safe to say that I am a pure jack russell. </br>
+  The date of my birth was October 6, 2012, so I am 10.5 years old, and that's a lot of age for a dog my size. </br>
+  I was chosen by my owner at the age of 2 months, as you can see in the picture below, when I was a puppy. </br>
+  There is no doubt that I am a very cute dog, as well as a very smart dog. </br>
+  In spite of the fact that I am older, I am very active, and I enjoy playing games. 
+</p>
 </section>
 
 <section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
+<h1>photos</h1>
+<div class="gallery">
+  <div class="thumbnails">
+    <img src="hetz1.jpg" alt="Image 1" data-full="hetz1.jpg" class="photo">
+    <img src="hetz2.jpg" alt="Image 2" data-full="hetz2.jpg" class="photo">
+    <img src="hetz3.jpg" alt="Image 3" data-full="hetz3.jpg" class="photo">
+    <img src="hetz4.jpg" alt="Image 4" data-full="hetz4.jpg" class="photo">
+    <img src="hetz5.jpg" alt="Image 5" data-full="hetz5.jpg" class="photo">
+  </div>
+  <div class="full-image">
+    <img src="hetz1.jpg" alt="Image 1">
+  </div>
+</div>
 </section>
 
 <section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
+<h1>my playlist</h1>
 </section>
 
 <section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
+<h1>give me a like</h1>
 </section>
 
 <section id="qrcoder" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-scan my code
-<br/>
-<br/>
-<br/>
+<h1>scan my code</h1>
 </section>
 
 <section id="spa" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-ans
-<br/>
-<br/>
-<br/>
+<h1>ans</h1>
 </section>
 
 <section id="contact" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
+<h1>contact me</h1>
 </section>
 
 
+<script type="text/javascript">
+  const thumbnails = document.querySelectorAll('.thumbnails img');
+  const fullImage = document.querySelector('.full-image img');
+  
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+      const fullSrc = thumbnail.getAttribute('data-full');
+      fullImage.setAttribute('src', fullSrc);
+    });
+  });
+</script>
+  
 <script type="text/javascript">
 $(function(){
   $("#nav a").click(function(e){
