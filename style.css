@@ -75,7 +75,22 @@ p{
 	font-family: Arial, sans-serif;
 	font-size: 20px;
 	color: #020202;
-	margin-left: 15px;
+}
+
+th {
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #020202;
+	text-align: left;
+}
+
+td {
+	font-family: Arial, sans-serif;
+	font-size: 15px;
+	color: #020202;
+	margin-left: 20px;
+	padding-right: 50px;
+	text-align: left;
 }
 
 .picture {
@@ -97,6 +112,10 @@ p{
 
 .facebook {
 	padding-left: 1000px;
+}
+
+.table {
+	padding-left: 100px;
 }
 
 .contact-form {
