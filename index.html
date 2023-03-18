@@ -39,7 +39,7 @@
     <img src="hetz2.jpg" alt="Image 2" data-full="hetz2.jpg" class="photo">
     <img src="hetz3.JPG" alt="Image 3" data-full="hetz3.JPG" class="photo">
     <img src="hetz4.JPG" alt="Image 4" data-full="hetz4.JPG" class="photo">
-    <img src="hetz5.JPG" alt="Image 5" data-full="hetz5.jpg" class="photo">
+    <img src="hetz5.JPG" alt="Image 5" data-full="hetz5.JPG" class="photo">
   </div>
   <div class="full-image">
     <img src="hetz1.jpg" alt="Image 1">
@@ -72,6 +72,18 @@
 
 <section id="contact" class="section">
 <h1>contact me</h1>
+<div class="contact-form">
+  <label for="email">Email:</label> </br>
+  <input type="email" id="email" name="email" placeholder="Enter your email address"> </br>
+
+  <label for="message">Message:</label></br>
+  <div class="input-wrapper">
+    <textarea id="message" name="message" contenteditable="true" placeholder="Type your message here..." style="height: 200px;"></textarea>
+    <span class="emoji-button" onclick="openEmojiPanel()">&#x1F60A;</span>
+  </div>
+
+  <button id="submit-btn" disabled>Submit</button>
+</div>
 </section>
 
 
@@ -100,5 +112,31 @@ $(function(){
     $('#menu').toggle($(this).scrollTop()>1000)
  });​
  </script>
+<script>
+  const emailField = document.getElementById("email");
+  const submitBtn = document.getElementById("submit-btn");
+
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (emailField.value.trim() !== "") {
+      // Do something with the form data here (e.g. send an email)
+      // and display a confirmation message
+      alert("Your message has been sent");
+      // Reset the form after submission
+      submitBtn.setAttribute("disabled", true);
+    } else {
+      alert("Please enter a valid email address");
+    }
+  });
+
+  emailField.addEventListener("input", function() {
+    if (emailField.value.trim() !== "") {
+      submitBtn.removeAttribute("disabled");
+    } else {
+      submitBtn.setAttribute("disabled", true);
+    }
+  });
+</script>
+
 </body>
 </html>
