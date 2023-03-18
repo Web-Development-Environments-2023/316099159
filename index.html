@@ -72,7 +72,7 @@
 
 <section id="contact" class="section">
 <h1>contact me</h1>
-<div class="contact-form">
+<!-- <div class="contact-form">
   <label for="email">Email:</label> </br>
   <input type="email" id="email" name="email" placeholder="Enter your email address"> </br>
 
@@ -83,13 +83,34 @@
   </div>
 
   <button id="submit-btn" disabled>Submit</button>
+</div> -->
+<div class="contact-form">
+<div>
+  <label for="email">Email:</label> </br>
+  <input type="email" id="email" name="email" required></br>
+</div>
+<div>
+  <label for="message">Message:</label></br>
+  <select id="emoji-select">
+    <option value="">Select an emoji</option>
+    <option value="😊">😊</option>
+    <option value="😢">😢</option>
+    <option value="😐">😐</option>
+  </select></br>
+  <textarea id="message" name="message" required></textarea></br>
+</div>
+<div>
+  <button id="submit-btn" disabled>Submit</button>
 </div>
 </section>
-
+</div>
 
 <script type="text/javascript">
   const thumbnails = document.querySelectorAll('.thumbnails img');
   const fullImage = document.querySelector('.full-image img');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const emojiSelect = document.getElementById('emoji-select');
   
   thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('click', () => {
@@ -119,10 +140,7 @@ $(function(){
   submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
     if (emailField.value.trim() !== "") {
-      // Do something with the form data here (e.g. send an email)
-      // and display a confirmation message
       alert("Your message has been sent");
-      // Reset the form after submission
       submitBtn.setAttribute("disabled", true);
     } else {
       alert("Please enter a valid email address");
@@ -136,6 +154,39 @@ $(function(){
       submitBtn.setAttribute("disabled", true);
     }
   });
+
+emojiSelect.addEventListener('change', () => {
+  const selectedEmoji = emojiSelect.value;
+  if (selectedEmoji) {
+    messageInput.value += selectedEmoji;
+  }
+});
+
+// Add event listener to email input to enable submit button when email is entered
+emailInput.addEventListener('input', () => {
+  if (emailInput.checkValidity() && messageInput.value.trim()) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+});
+
+// Add event listener to message input to enable submit button when message is entered
+messageInput.addEventListener('input', () => {
+  if (emailInput.checkValidity() && messageInput.value.trim()) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+});
+
+// Add event listener to submit button to clear form and show success message
+submitBtn.addEventListener('click', () => {
+  alert('Your message has been sent');
+  messageInput.value = '';
+  emailInput.value = '';
+  submitBtn.disabled = true;
+});
 </script>
 
 </body>
